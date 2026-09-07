@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPro - Expert Tutoring Services</title>
+    <link href="home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Quiz Popup Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Quick Knowledge Check!</h2>
+            <div id="quizContainer">
+                <div class="quiz-question">
+                    <h3 id="questionText"></h3>
+                    <div id="answerOptions" class="options-container"></div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span id="currentQuestion">1</span>/3
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">TutorPro</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="quiz.html">Quizzes</a></li>
+                <li><a href="study.html">Study Plan</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="cta-button">Sign Up</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1>Transform Your Learning Journey</h1>
+            <p>Master Any Subject with AI-Powered Personalized Learning</p>
+            <div class="cta-buttons">
+                <button class="primary-cta">Start Learning Now</button>
+                <button class="secondary-cta">Take Demo Quiz</button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-grid">
+                <div class="stat-card animate__animated animate__fadeInUp">
+                    <div class="stat-number" data-target="98">0</div>
+                    <p>Success Rate</p>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" data-delay="200">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <p>Students Helped</p>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" data-delay="400">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <p>AI Study Plans Created</p>
+                </div>
+                <div class="stat-card animate__animated animate__fadeInUp" data-delay="600">
+                    <div class="stat-number" data-target="100">0</div>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="review-grid">
+                <div class="review-card animate__animated animate__fadeInLeft">
+                    <div class="review-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The AI-powered study plans are incredible! I've improved my grades significantly in just two months."</p>
+                        <div class="reviewer">
+                            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Sarah M.">
+                            <div>
+                                <h4>Sarah M.</h4>
+                                <p>Computer Science Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card animate__animated animate__fadeInUp">
+                    <div class="review-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The personalized quizzes helped me identify my weak points and focus my study efforts effectively."</p>
+                        <div class="reviewer">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="John D.">
+                            <div>
+                                <h4>John D.</h4>
+                                <p>Mathematics Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card animate__animated animate__fadeInRight">
+                    <div class="review-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The 24/7 AI tutoring support is amazing. It's like having a personal tutor available whenever I need help!"</p>
+                        <div class="reviewer">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Emily R.">
+                            <div>
+                                <h4>Emily R.</h4>
+                                <p>Physics Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section class="bottom-cta">
+        <div class="container">
+            <h2>Ready to Start Your Learning Journey?</h2>
+            <p>Join thousands of successful students today</p>
+            <button class="primary-cta">Sign Up Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TutorPro</h3>
+                    <p>Transforming education through AI-powered personalized learning.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="quiz.html">Quizzes</a></li>
+                        <li><a href="study.html">Study Plans</a></li>
+                        <li><a href="user.html">My Profile</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> support@tutorpro.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TutorPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPro - Interactive Quizzes</title>
+    <link href="quiz.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">TutorPro</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html" class="active">Quizzes</a></li>
+                <li><a href="study.html">Study Plan</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="cta-button">Sign Up</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Quiz Selection Section -->
+    <section class="quiz-selection" id="quizSelection">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeIn">Choose Your Subject</h1>
+            <div class="subject-grid">
+                <div class="subject-card animate__animated animate__fadeInUp" data-subject="mathematics">
+                    <i class="fas fa-square-root-alt"></i>
+                    <h3>Mathematics</h3>
+                    <p>Algebra, Calculus, Statistics</p>
+                </div>
+                <div class="subject-card animate__animated animate__fadeInUp" data-subject="sciences">
+                    <i class="fas fa-atom"></i>
+                    <h3>Sciences</h3>
+                    <p>Physics, Chemistry, Biology</p>
+                </div>
+                <div class="subject-card animate__animated animate__fadeInUp" data-subject="languages">
+                    <i class="fas fa-language"></i>
+                    <h3>Languages</h3>
+                    <p>English, Spanish, French</p>
+                </div>
+                <div class="subject-card animate__animated animate__fadeInUp" data-subject="history">
+                    <i class="fas fa-landmark"></i>
+                    <h3>History</h3>
+                    <p>World History, Geography</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interface -->
+    <section class="quiz-interface" id="quizInterface" style="display: none;">
+        <div class="container">
+            <div class="quiz-header">
+                <h2 id="subjectTitle">Mathematics Quiz</h2>
+                <div class="quiz-info">
+                    <span class="timer"><i class="fas fa-clock"></i> <span id="timeLeft">30:00</span></span>
+                    <span class="progress-text">Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">10</span></span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="quizProgress"></div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h3 id="questionText">Loading question...</h3>
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button id="prevQuestion" class="nav-button" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                <button id="nextQuestion" class="nav-button">Next <i class="fas fa-arrow-right"></i></button>
+                <button id="submitQuiz" class="submit-button" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Quiz Results</h2>
+            <div class="results-container">
+                <div class="score-circle">
+                    <div class="score" id="finalScore">85%</div>
+                </div>
+                <div class="results-details">
+                    <div class="detail-item">
+                        <span>Correct Answers:</span>
+                        <span id="correctAnswers">17/20</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Time Taken:</span>
+                        <span id="timeTaken">15:30</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Performance Level:</span>
+                        <span id="performanceLevel">Advanced</span>
+                    </div>
+                </div>
+                <div class="ai-feedback" id="aiFeedback">
+                    <h3><i class="fas fa-robot"></i> AI Tutor Feedback</h3>
+                    <p>Based on your performance, here are your areas for improvement...</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="primary-cta" id="viewDetailedReport">View Detailed Report</button>
+                    <button class="secondary-cta" id="retakeQuiz">Retake Quiz</button>
+                    <button class="tertiary-cta" id="backToSubjects">Try Different Subject</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Assistant Chat -->
+    <div class="ai-assistant" id="aiAssistant">
+        <div class="ai-toggle" id="aiToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="ai-chat-container" style="display: none;">
+            <div class="ai-chat-header">
+                <h3>AI Tutor Assistant</h3>
+                <span class="minimize">&minus;</span>
+            </div>
+            <div class="ai-chat-messages" id="aiMessages">
+                <!-- Messages will be inserted here -->
+            </div>
+            <div class="ai-chat-input">
+                <input type="text" placeholder="Ask for help..." id="aiInput">
+                <button id="aiSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPro - AI Study Plan Generator</title>
+    <link rel="stylesheet" href="study.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html" class="logo">TutorPro</a>
+            <button id="navToggle" class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="study.html" class="active">Study</a></li>
+                <li><button class="cta-button">Sign In</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Study Plan Generator Section -->
+    <section class="study-plan-generator">
+        <div class="container">
+            <h1>AI Study Plan Generator</h1>
+            <p>Let our AI create a personalized study plan tailored to your goals and preferences.</p>
+
+            <div class="plan-generator-container">
+                <form id="preferencesForm" class="preferences-form">
+                    <div class="form-group">
+                        <label for="studyGoal">What would you like to study?</label>
+                        <select id="studyGoal" required>
+                            <option value="">Select your study goal</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="programming">Programming</option>
+                            <option value="languages">Languages</option>
+                            <option value="history">History</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeCommitment">Weekly time commitment (hours)</label>
+                        <input type="number" id="timeCommitment" min="1" max="168" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred learning methods</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" value="video"> Video Lectures
+                            </label>
+                            <label>
+                                <input type="checkbox" value="reading"> Reading Materials
+                            </label>
+                            <label>
+                                <input type="checkbox" value="practice"> Practice Exercises
+                            </label>
+                            <label>
+                                <input type="checkbox" value="interactive"> Interactive Learning
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" id="generatePlan" class="generate-button">
+                        <i class="fas fa-magic"></i> Generate Study Plan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Plan Section -->
+    <section id="studyPlan" class="study-plan" style="display: none;">
+        <div class="container">
+            <div class="plan-header">
+                <h2>Your Personalized Study Plan</h2>
+                <div class="plan-actions">
+                    <button id="savePlan" class="action-button">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button id="sharePlan" class="action-button">
+                        <i class="fas fa-share"></i> Share
+                    </button>
+                    <button id="printPlan" class="action-button">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </div>
+
+            <div class="plan-content">
+                <!-- Weekly Schedule -->
+                <div class="weekly-schedule">
+                    <h3><i class="fas fa-calendar"></i> Weekly Schedule</h3>
+                    <div id="scheduleGrid" class="schedule-grid"></div>
+                </div>
+
+                <!-- Resources -->
+                <div class="resources-section">
+                    <h3><i class="fas fa-book"></i> Recommended Resources</h3>
+                    <div id="resourcesGrid" class="resources-grid"></div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="milestones-section">
+                    <h3><i class="fas fa-flag"></i> Learning Milestones</h3>
+                    <div id="milestonesList" class="milestones-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Study Assistant -->
+    <div class="ai-assistant">
+        <div class="ai-toggle" id="aiToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+
+        <div class="ai-chat-container" style="display: none;">
+            <div class="ai-chat-header">
+                <h3>AI Study Assistant</h3>
+                <button class="minimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+
+            <div id="aiMessages" class="ai-chat-messages">
+                <div class="message ai-message">
+                    Hello! I'm your AI study assistant. How can I help you today?
+                </div>
+            </div>
+
+            <div class="ai-chat-input">
+                <input type="text" id="aiInput" placeholder="Ask me anything...">
+                <button id="aiSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Modal -->
+    <div id="progressModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Progress</h2>
+            
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Course Completion</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Hours Studied</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Milestones Achieved</div>
+                </div>
+            </div>
+
+            <div id="progressChart"></div>
+        </div>
+    </div>
+
+    <script src="study.js"></script>
+</body>
+</html>

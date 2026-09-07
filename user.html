@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorPro - User Profile</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="home.html" class="logo">TutorPro</a>
+            <button id="navToggle" class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="study.html">Study</a></li>
+                <li><a href="user.html" class="active">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- User Dashboard -->
+    <div class="dashboard">
+        <div class="container">
+            <!-- User Profile Header -->
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="https://via.placeholder.com/150" alt="User Avatar">
+                        <button class="edit-avatar">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-details">
+                        <h1>John Doe</h1>
+                        <p class="user-level">Advanced Learner</p>
+                        <p class="user-bio">Passionate about learning and self-improvement</p>
+                        <button class="edit-profile-btn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Study Time</h3>
+                        <p>128 hours</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Achievements</h3>
+                        <p>24 earned</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3>XP Points</h3>
+                        <p>3,450</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Progress Section -->
+                <section class="dashboard-section progress-section">
+                    <h2><i class="fas fa-chart-line"></i> Learning Progress</h2>
+                    <div class="progress-charts">
+                        <div class="chart">
+                            <canvas id="weeklyProgress"></canvas>
+                            <h4>Weekly Activity</h4>
+                        </div>
+                        <div class="chart">
+                            <canvas id="subjectProgress"></canvas>
+                            <h4>Subject Progress</h4>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements Section -->
+                <section class="dashboard-section achievements-section">
+                    <h2><i class="fas fa-medal"></i> Recent Achievements</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <i class="fas fa-brain achievement-icon"></i>
+                            <h4>Quick Learner</h4>
+                            <p>Completed 5 lessons in one day</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-fire achievement-icon"></i>
+                            <h4>Study Streak</h4>
+                            <p>7 days consecutive learning</p>
+                        </div>
+                        <div class="achievement-card locked">
+                            <i class="fas fa-lock achievement-icon"></i>
+                            <h4>Master Mind</h4>
+                            <p>Complete all advanced quizzes</p>
+                        </div>
+                    </div>
+                    <button class="view-all-btn">View All Achievements</button>
+                </section>
+
+                <!-- Reminders Section -->
+                <section class="dashboard-section reminders-section">
+                    <h2><i class="fas fa-bell"></i> Reminders</h2>
+                    <div class="reminders-list">
+                        <div class="reminder-item">
+                            <div class="reminder-time">Today, 3:00 PM</div>
+                            <div class="reminder-content">
+                                <h4>Mathematics Quiz</h4>
+                                <p>Advanced Calculus - Chapter 5</p>
+                            </div>
+                            <button class="reminder-action">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                        <div class="reminder-item">
+                            <div class="reminder-time">Tomorrow, 10:00 AM</div>
+                            <div class="reminder-content">
+                                <h4>Study Session</h4>
+                                <p>Physics - Quantum Mechanics</p>
+                            </div>
+                            <button class="reminder-action">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="add-reminder-btn">
+                        <i class="fas fa-plus"></i> Add Reminder
+                    </button>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="dashboard-section activity-section">
+                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    <div class="activity-timeline">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Completed Quiz</h4>
+                                <p>Advanced Mathematics - Score: 95%</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Study Session</h4>
+                                <p>Physics - 2 hours of focused study</p>
+                                <span class="activity-time">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" id="userName" value="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="userBio">Bio</label>
+                    <textarea id="userBio">Passionate about learning and self-improvement</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" id="userEmail" value="john.doe@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="userNotifications">Notification Preferences</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" checked> Email Notifications
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> Push Notifications
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="save-profile-btn">Save Changes</button>
+            </form>
+        
